@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="../key sound/sound.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="keys">
+
+            <div class="key" data-key="76">
+                <div class="lastride">
+                    <img src="../key sound/LAST RIDE.jpg" alt="">
+                </div>
+            </div>
+            <h2>L</h2>
+
+
+            <!-- ------------------------------- -->
+
+            <div class="key" data-key="77">
+                <div class="merana">
+                    <img src="../key sound/MERA NA.jpg" alt="">
+                </div>
+            </div>
+            <h2>M</h2>
+
+
+
+            <div class="key" data-key="89">
+                <div class="yic">
+                    <img src="../key sound/YIC.jpg" alt="">
+                </div>
+            </div>
+            <h2>Y</h2>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <audio data-key="76" src="../key sound/The Last Ride - DjBaap.Net.mp3"></audio>
+    <audio data-key="77" src="../key sound/Mera Na - DjBaap.Net.mp3"></audio>
+    <audio data-key="89" src="../key sound/Youngest In Charge - DjBaap.Net.mp3"></audio>
+
+
+    <script>
+        function playSound(event) {
+            const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+            const keys = document.querySelector(`div[data-key="${event.keyCode}"]`);
+
+            keys.classList.add("playing");
+            audio.crrentTime = 0;
+            audio.play();
+
+        }
+
+        const key = Array.from(document.querySelectorAll('.key'));
+        window.addEventListener('keydown', playSound);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
